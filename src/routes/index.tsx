@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 import { Nav } from "@/components/spa/Nav";
 import { WhatsAppButton } from "@/components/spa/WhatsAppButton";
@@ -10,61 +9,6 @@ import serviceLashes from "@/assets/service-lashes.jpg";
 import serviceNails from "@/assets/service-nails.png";
 import serviceFacial from "@/assets/service-facial.jpg";
 import logoImg from "@/assets/Spa & Beauty Initial Logo.png";
-
-export const Route = createFileRoute("/")({
-  component: Index,
-  head: () => ({
-    meta: [
-      { title: "Sbeltas Beauty Spa — Luxury Lashes, Nails & Facials in London, CA" },
-      {
-        name: "description",
-        content:
-          "Boutique beauty spa in London, CA. Premium eyelash extensions, manicure, pedicure & advanced facials. Book your luxury appointment today.",
-      },
-      { property: "og:title", content: "Sbeltas Beauty Spa — Luxury Beauty in London, CA" },
-      {
-        property: "og:description",
-        content:
-          "Premium lashes, nails and facials for women who expect perfection. Reserve your appointment.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      { rel: "canonical", href: "/" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap",
-      },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BeautySalon",
-          name: "Sbeltas Beauty Spa",
-          image: "/og-image.jpg",
-          telephone: "+1-437-429-9450",
-          priceRange: "$$",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "London",
-            addressRegion: "ON",
-            addressCountry: "CA",
-          },
-          openingHours: "Mo-Fr 09:00-17:00",
-          areaServed: "London, CA",
-          description:
-            "Boutique luxury beauty spa specializing in eyelash extensions, manicure, pedicure and advanced facial treatments.",
-        }),
-      },
-    ],
-  }),
-});
 
 function Star() {
   return (
@@ -106,7 +50,7 @@ function OutlineButton({ href, children }: { href: string; children: React.React
   );
 }
 
-function Index() {
+export default function Index() {
   useReveal();
 
   return (
