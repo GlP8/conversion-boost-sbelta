@@ -7,8 +7,7 @@
   targetPort = 8080
   autoLaunch = false
 
-# Redirige todas las rutas a index.html para SPA
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/server"
+  to = "/index.html"
   status = 200
